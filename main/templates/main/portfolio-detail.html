@@ -1,0 +1,92 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}{% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+<style>
+  .top-skills {padding: 0; margin: 10px; list-style: none;}
+  .top-skills li {display: inline-block; vertical-align: middle; background: rgba(38, 70, 255, 0.25); border-radius: 16px; padding: 4px 16px;color: #2646FF; font-weight: 500; }
+  
+  </style>
+<section>
+  <div class="innerPageBannerCol">
+    <div class="container">
+      <div class="row g-4 g-md-3  align-items-center">
+        <div class="col-md-6">
+          <div class="bannerContent">
+            <h1 class="xlTitle pb-md-3">{{object.name}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="sectionSpaceSm">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <div>{{object.body|safe}}</div> <br>
+          <div style="font-family: roboto;"> <em>{{object.description}}</em></div>
+        </div>
+        <div class="col-sm">
+          <div class="container row">
+           
+            <div class="col">
+              
+              {% for language in object.languages.all%}
+            <ul class="top-skills">
+              <li>{{language}}</li>
+            
+            </ul>
+            
+            {% endfor %}
+          
+            </div>
+            
+            <div class="container" style="text-align: center;"><br>
+              <a href="{{object.project_link}}" target="_blank" ><img src="{% static 'images/tap.png' %}" alt="..." height="40"> <br> <b>LINK</b> </a>
+            </div>
+            
+          </div>
+        
+            
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- ================================
+End Content
+================================= -->
+{%endblock%}
+    
