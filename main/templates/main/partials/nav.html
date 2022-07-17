@@ -2,6 +2,8 @@
 <!-- ================================
 Start Navigation Bar
 ================================= -->
+<link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
 <header>
     <div class="headerCol">
     <div class="container-fluid">
@@ -22,6 +24,8 @@ Start Navigation Bar
                 <li><a href="{%url 'main:portfolios' %}">Portfolio</a></li>
                 <!-- <li><a href="{% url 'main:blogs' %}">Blog</a></li> -->
                 <li><a href="{%url 'main:contact'%}">Contact</a></li>
+                <li><img src="{% static 'images/moon.png' %} " id="icon" alt="...">
+                </li>
                 </ul>
             </div>
             </div>
@@ -30,6 +34,17 @@ Start Navigation Bar
     </div>
     </div>
 </header>
+<script>
+    var icon = document.getElementById("icon");
+    icon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+            icon.src = "{% static 'images/sun.png' %}"
+        }else{
+            icon.src = "{% static 'images/moon.png' %}";
+        }
+    }
+</script>
 <!-- ================================
 End Navigation Bar
 ================================= -->
