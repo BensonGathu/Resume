@@ -1,4 +1,3 @@
-
 {% extends 'main/base.html' %}
 {% load static %}
 
@@ -35,15 +34,28 @@ Start Content
 {% block content %}
 
 <style>
-.top-skills {padding: 0; margin: 0; list-style: none;}
-.top-skills li {display: inline-block; vertical-align: middle;background: rgba(38, 70, 255, 0.25); border-radius: 16px; padding: 4px 16px;color: #2646FF; font-weight: 500;}
-.coding-skills {
-  width: auto;
-  height: 400px;
-  overflow: scroll;
-  overflow-x: hidden;
-}
+  .top-skills {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
 
+  .top-skills li {
+    display: inline-block;
+    vertical-align: middle;
+    background: rgba(38, 70, 255, 0.25);
+    border-radius: 16px;
+    padding: 4px 16px;
+    color: #2646FF;
+    font-weight: 500;
+  }
+
+  .coding-skills {
+    width: auto;
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
 </style>
 <section>
   <div class="bannerSection">
@@ -56,7 +68,8 @@ Start Content
         </div>
         <div class="col-md">
           <div class="bannerContent">
-            <h1 class="xlTitle pb-3">Hi<img src="{% static 'images/greetings.png' %}" height="30" alt="...">, I’m {{me.first_name|title}}, <br>a {{me.userprofile.title}} </br></h1>
+            <h1 class="xlTitle pb-3">Hi<img src="{% static 'images/greetings.png' %}" height="30" alt="...">, I’m
+              {{me.first_name|title}}, <br>a {{me.userprofile.title}} </br></h1>
             <p>{{me.userprofile.bio}}</p>
             <div class="bannerBtnCol">
               <div class="row">
@@ -84,7 +97,7 @@ Start Content
             <h4 class="smTitle pb-3">Key Skills</h4>
             {% for sk in skills %}
             {% if sk.is_key_skill %}
-           
+
             <div class="keySkillCard ">
               {% if sk.image %}
               <div class="ksIconCol">
@@ -102,15 +115,16 @@ Start Content
           <div class="progressCol coding-skills">
             <div class="progressCard">
               {% for sk in skills %}
-              
+
               {% if sk.is_key_skill == False %}
-      
+
               <div class="progressCol">
                 <span class="progressLbl">{{sk.name}}</span>
                 <div class="row g-2 align-items-center">
                   <div class="col">
                     <div class="progress progressStyle">
-                      <div class="progress-bar" role="progressbar" style="width: {{sk.score}}%" aria-valuenow="{{sk.score}}" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar" role="progressbar" style="width: {{sk.score}}%"
+                        aria-valuenow="{{sk.score}}" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                   <div class="col-auto">
@@ -120,7 +134,7 @@ Start Content
               </div>
               {% endif %}
               {% endfor %}
-              
+
             </div>
           </div>
         </div>
@@ -132,23 +146,28 @@ Start Content
 <section>
   <div class="sectionSpaceSm lightBg">
     <div class="elementor-widget-container">
-    <h5 class="smText regular container" style="text-align: inherit" >⚡Insights about me</h5>
-    <marquee behavior="alternate" scrolldelay="200" scrollamount="5" attribute_name = "attribute_value"....more attributes>
-      <ul class="top-skills">
-        <li>Business Information Technology</li>
-        <li>Software Development</li>
-        <li>UI/UX</li>
-        <li>Python</li>
-        <li>Django</li>
-        <li>Bootstrap</li>
-        <li>Shopify</li>
-        <li>Drupal</li>
-        <li>Networking</li>
+      <h5 class="smText regular container" style="text-align: inherit">⚡Insights about me</h5>
+      <marquee behavior="alternate" scrolldelay="200" scrollamount="5" attribute_name="attribute_value" ....more
+        attributes>
+        <ul class="top-skills">
+          <li>Python/Django</li>
 
-      </ul>
+          <li>Flutter/Dart</li>
+          <li>React Js</li>
+          <li>Angular Js</li>
+          <li>JavaScript</li>
+          <li>PostgreSQL</li>
+          <li>MySQL</li>
+          <li>Kubernetes</li>
+          <li>Docker</li>
+          <li>Terraform</li>
+          <li>AWS</li>
+          <li>GCP</li>
+        
+        </ul>
       </marquee>
-  </div>
-    
+    </div>
+
   </div>
 </section>
 
@@ -180,9 +199,9 @@ Start Content
             </div>
             {% endif %}
             {% endfor %}
-            
+
           </div>
-        </div>            
+        </div>
         <div class="cert-swiper-button-next swiper-button-next swiperBtnStyle"></div>
         <div class="cert-swiper-button-prev swiper-button-prev swiperBtnStyle"></div>
         <div class="swiper-pagination swiperPaginationStyle posInitial"></div>
@@ -197,13 +216,14 @@ Start Content
       <div class="portfolioCol">
         <div class="row pb-3">
           <div class="col">
-            <h4 class="smText regular"> <a href="javascript:void(0)"><img src="{% static 'images/starIcon.png' %}" height="30" alt="..."></a>Featured Work</h4>
+            <h4 class="smText regular"> <a href="javascript:void(0)"><img src="{% static 'images/starIcon.png' %}"
+                  height="30" alt="..."></a>Featured Work</h4>
           </div>
           <div class="col-auto">
             <a href="{% url 'main:portfolios' %}" class="simpleLink">View all</a>
           </div>
         </div>
-  
+
         {% for p in portfolio %}
         {% if p.is_active %}
         <div class="portfolioCard">
@@ -226,7 +246,7 @@ Start Content
         </div>
         {% endif %}
         {% endfor %}
-        
+
       </div>
       <!-- <div class="testimonialCol">
         <h4 class="smText regular d-block">Testimonials</h4>
@@ -263,22 +283,118 @@ Start Content
 
         </div>
       </div> -->
- 
-      
+
+
     </div>
   </div>
 </section>
 <br>
 <section>
-  <div class="center css-1yar3gm ekbj1n5"><h2 class="css-5damvb ekbj1n4">Development process</h2>
+  <div class="center css-1yar3gm ekbj1n5">
+    <h2 class="css-5damvb ekbj1n4">Development process</h2>
   </div>
   <div class="dev css-7rfqpa eiw96gh3">
     <div class="dev css-q2oc4e eiw96gh1" style="width: 100%;"></div>
     <div class="lineRWD css-q2oc4e eiw96gh1"></div>
     <div data-aos="customshit" data-aos-delay="400" class="dev css-q4gd2f eiw96gh2 aos-init aos-animate">
-      <div class="animatedCircle animatedCircle-0 dev css-7vl1qn eiw96gh0" style="opacity: 1; background: white;" >
-        <svg class="firstHalf"><g><circle stroke-width="3" stroke-dasharray="1000" fill="none" class="circle0 circleBig" style="stroke-dashoffset: 0px;"></circle><circle fill="#4C73ED" class="circle00 circleSmall" style="r: 6px;"></circle></g></svg><svg class="secondHalf"><g><circle stroke="#4C73ED" stroke-width="3" stroke-dasharray="1000" fill="none" class="circle0a circleBig2" style="stroke-dashoffset: 0px;"></circle></g></svg></div><div style="opacity: 1;"><h3 style="color: #4C73ED;" class="card0">Exploration</h3><p>Finding the optimal technologies and other development solutions suitable for your product.</p></div></div><div data-aos="customshit" data-aos-delay="400" class="dev css-q4gd2f eiw96gh2 aos-init aos-animate"><div class="animatedCircle animatedCircle-1 dev css-7vl1qn eiw96gh0" style="opacity: 1; background: white;"><svg class="firstHalf"><g><circle stroke-width="3" stroke-dasharray="1000" fill="none" class="circle1 circleBig" style="stroke-dashoffset: 0px;"></circle><circle fill="#7A84F2" class="circle11 circleSmall" style="r: 6px;"></circle></g></svg><svg class="secondHalf"><g><circle stroke="#7A84F2" stroke-width="3" stroke-dasharray="1000" fill="none" class="circle1a circleBig2" style="stroke-dashoffset: 0px;"></circle></g></svg></div><div style="opacity: 1;"><h3 style="color: #7A84F2;" class="card1">Back-end</h3><p>Creating the engine that runs your product using up-to-date, tailored solutions.</p></div></div><div data-aos="customshit" data-aos-delay="400" class="dev css-q4gd2f eiw96gh2 aos-init aos-animate"><div class="animatedCircle animatedCircle-2 dev css-7vl1qn eiw96gh0" style="opacity: 1; background: white;"><svg class="firstHalf"><g><circle stroke-width="3" stroke-dasharray="1000" fill="none" class="circle2 circleBig" style="stroke-dashoffset: 0px;"></circle><circle fill="#A794FE" class="circle22 circleSmall" style="r: 6px;"></circle></g></svg><svg class="secondHalf"><g><circle stroke="#A794FE" stroke-width="3" stroke-dasharray="1000" fill="none" class="circle2a circleBig2" style="stroke-dashoffset: 0px;"></circle></g></svg></div><div style="opacity: 1;"><h3 style="color: #A794FE;" class="card2">Front-end</h3><p>Building pixel-perfect screens based on a design system with care&nbsp;of functionality and&nbsp;visual quality.</p></div></div><div data-aos="customshit" data-aos-delay="400" class="dev css-q4gd2f eiw96gh2 aos-init aos-animate"><div class="animatedCircle animatedCircle-3 dev css-7vl1qn eiw96gh0" style="opacity: 1; background: white;"><svg class="firstHalf"><g><circle stroke-width="3" stroke-dasharray="1000" fill="none" class="circle3 circleBig" style="stroke-dashoffset: 0px;"></circle><circle fill="#D09AFC" class="circle33 circleSmall" style="r: 6px;"></circle></g></svg><svg class="secondHalf"><g><circle stroke="#D09AFC" stroke-width="3" stroke-dasharray="1000" fill="none" class="circle3a circleBig2" style="stroke-dashoffset: 0px;"></circle></g></svg></div><div style="opacity: 1;"><h3 style="color: #D09AFC;" class="card3">Quality Assurance &amp; Optimalisation</h3><p>Thorough on device and stress testing. Making the product lightweight and fast.</p></div></div><div data-aos="customshit" data-aos-delay="400" class="dev css-q4gd2f eiw96gh2 aos-init aos-animate"><div class="animatedCircle animatedCircle-4 dev css-7vl1qn eiw96gh0" style="opacity: 1; background: white;"><svg class="firstHalf"><g><circle stroke-width="3" stroke-dasharray="1000" fill="none" class="circle4 circleBig" style="stroke-dashoffset: 0px;"></circle><circle fill="#E8ABFF" class="circle44 circleSmall" style="r: 6px;"></circle></g></svg><svg class="secondHalf"><g><circle stroke="#E8ABFF" stroke-width="3" stroke-dasharray="1000" fill="none" class="circle4a circleBig2" style="stroke-dashoffset: 0px;"></circle></g></svg></div><div style="opacity: 1;"><h3 style="color: #E8ABFF;" class="card4">Maintenance &amp;&nbsp;Support</h3><p>After finalising the product we provide necessary support and maintenance services.</p></div></div></div>
-  
+      <div class="animatedCircle animatedCircle-0 dev css-7vl1qn eiw96gh0" style="opacity: 1; background: white;">
+        <svg class="firstHalf">
+          <g>
+            <circle stroke-width="3" stroke-dasharray="1000" fill="none" class="circle0 circleBig"
+              style="stroke-dashoffset: 0px;"></circle>
+            <circle fill="#4C73ED" class="circle00 circleSmall" style="r: 6px;"></circle>
+          </g>
+        </svg><svg class="secondHalf">
+          <g>
+            <circle stroke="#4C73ED" stroke-width="3" stroke-dasharray="1000" fill="none" class="circle0a circleBig2"
+              style="stroke-dashoffset: 0px;"></circle>
+          </g>
+        </svg>
+      </div>
+      <div style="opacity: 1;">
+        <h3 style="color: #4C73ED;" class="card0">Exploration</h3>
+        <p>Finding the optimal technologies and other development solutions suitable for your product.</p>
+      </div>
+    </div>
+    <div data-aos="customshit" data-aos-delay="400" class="dev css-q4gd2f eiw96gh2 aos-init aos-animate">
+      <div class="animatedCircle animatedCircle-1 dev css-7vl1qn eiw96gh0" style="opacity: 1; background: white;"><svg
+          class="firstHalf">
+          <g>
+            <circle stroke-width="3" stroke-dasharray="1000" fill="none" class="circle1 circleBig"
+              style="stroke-dashoffset: 0px;"></circle>
+            <circle fill="#7A84F2" class="circle11 circleSmall" style="r: 6px;"></circle>
+          </g>
+        </svg><svg class="secondHalf">
+          <g>
+            <circle stroke="#7A84F2" stroke-width="3" stroke-dasharray="1000" fill="none" class="circle1a circleBig2"
+              style="stroke-dashoffset: 0px;"></circle>
+          </g>
+        </svg></div>
+      <div style="opacity: 1;">
+        <h3 style="color: #7A84F2;" class="card1">Back-end</h3>
+        <p>Creating the engine that runs your product using up-to-date, tailored solutions.</p>
+      </div>
+    </div>
+    <div data-aos="customshit" data-aos-delay="400" class="dev css-q4gd2f eiw96gh2 aos-init aos-animate">
+      <div class="animatedCircle animatedCircle-2 dev css-7vl1qn eiw96gh0" style="opacity: 1; background: white;"><svg
+          class="firstHalf">
+          <g>
+            <circle stroke-width="3" stroke-dasharray="1000" fill="none" class="circle2 circleBig"
+              style="stroke-dashoffset: 0px;"></circle>
+            <circle fill="#A794FE" class="circle22 circleSmall" style="r: 6px;"></circle>
+          </g>
+        </svg><svg class="secondHalf">
+          <g>
+            <circle stroke="#A794FE" stroke-width="3" stroke-dasharray="1000" fill="none" class="circle2a circleBig2"
+              style="stroke-dashoffset: 0px;"></circle>
+          </g>
+        </svg></div>
+      <div style="opacity: 1;">
+        <h3 style="color: #A794FE;" class="card2">Front-end</h3>
+        <p>Building pixel-perfect screens based on a design system with care&nbsp;of functionality and&nbsp;visual
+          quality.</p>
+      </div>
+    </div>
+    <div data-aos="customshit" data-aos-delay="400" class="dev css-q4gd2f eiw96gh2 aos-init aos-animate">
+      <div class="animatedCircle animatedCircle-3 dev css-7vl1qn eiw96gh0" style="opacity: 1; background: white;"><svg
+          class="firstHalf">
+          <g>
+            <circle stroke-width="3" stroke-dasharray="1000" fill="none" class="circle3 circleBig"
+              style="stroke-dashoffset: 0px;"></circle>
+            <circle fill="#D09AFC" class="circle33 circleSmall" style="r: 6px;"></circle>
+          </g>
+        </svg><svg class="secondHalf">
+          <g>
+            <circle stroke="#D09AFC" stroke-width="3" stroke-dasharray="1000" fill="none" class="circle3a circleBig2"
+              style="stroke-dashoffset: 0px;"></circle>
+          </g>
+        </svg></div>
+      <div style="opacity: 1;">
+        <h3 style="color: #D09AFC;" class="card3">Quality Assurance &amp; Optimalisation</h3>
+        <p>Thorough on device and stress testing. Making the product lightweight and fast.</p>
+      </div>
+    </div>
+    <div data-aos="customshit" data-aos-delay="400" class="dev css-q4gd2f eiw96gh2 aos-init aos-animate">
+      <div class="animatedCircle animatedCircle-4 dev css-7vl1qn eiw96gh0" style="opacity: 1; background: white;"><svg
+          class="firstHalf">
+          <g>
+            <circle stroke-width="3" stroke-dasharray="1000" fill="none" class="circle4 circleBig"
+              style="stroke-dashoffset: 0px;"></circle>
+            <circle fill="#E8ABFF" class="circle44 circleSmall" style="r: 6px;"></circle>
+          </g>
+        </svg><svg class="secondHalf">
+          <g>
+            <circle stroke="#E8ABFF" stroke-width="3" stroke-dasharray="1000" fill="none" class="circle4a circleBig2"
+              style="stroke-dashoffset: 0px;"></circle>
+          </g>
+        </svg></div>
+      <div style="opacity: 1;">
+        <h3 style="color: #E8ABFF;" class="card4">Maintenance &amp;&nbsp;Support</h3>
+        <p>After finalising the product we provide necessary support and maintenance services.</p>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- <section>
